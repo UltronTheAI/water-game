@@ -1,0 +1,99 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+    height: 100vh;
+    overflow: hidden;
+}
+.game
+{
+    width: 60%;
+    height: 50%;
+    background: url('./38580.jpg');
+    border-radius: 50px;
+    overflow: hidden;
+}
+.p1
+{
+    width: 50px;
+    height: 40%;
+    background: url('./f4dab4c6-62a2-4c4f-acd0-5886ccca6f92.jpg');
+    position: relative;
+    left: 50%;
+    border-radius: 50px;
+    top: 10px;
+    box-shadow: -5px 0px 10px #f30655;
+}
+.p2
+{
+    width: 50px;
+    height: 40%;
+    background: url('./f4dab4c6-62a2-4c4f-acd0-5886ccca6f92.jpg');
+    position: relative;
+    left: 90%;
+    border-radius: 50px;
+    top: 10px;
+    box-shadow: -5px 0px 10px #f30655;
+}
+.game h1
+{
+    position: absolute;
+    color: #fff;
+    margin: 20px;
+    font-size: 2ex;
+}
+.bird
+{
+    background: url('./Water_drop_001.jpg');
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 30%;
+    transform: rotate(30deg);
+    transition: 1.8s;
+    box-shadow: -5px 0px 10px #06b0f3;
+}
+.eye
+{
+position: relative;
+background: transparent;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+top: 20px;
+left: 30px;
+}
+.button
+{
+    background: #cc007d;
+    border-radius: 50px;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px;
+}
+.button button
+{
+    border: 1px solid rgba(255, 255, 255, 0.479);
+    padding: 5px;
+    margin: 2px;
+    color: #fff;
+    background: transparent;
+}
+.button button:active
+{
+    border: 0;
+    background: yellowgreen;
+}
