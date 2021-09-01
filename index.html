@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="game" onclick="game_c()">
+        <h1>0</h1>
+        <div class="bird">
+            <div class="eye"></div>
+        </div>
+        <div class="p1">
 
+        </div>
+        <div class="p2">
+
+        </div>
+    </div>
+    <script>
+        var p1 = document.querySelector('.p1');
+        var p2 = document.querySelector('.p2');
+        var bird = document.querySelector('.bird');
+        var rank = document.querySelector('h1');
+        var i = 50;
+        var speed = 100;
+        var jump = 50;
+        var io = 2;
+        var ran = 0;
+        function game()
+        {
+            if (i > 20 && i < 30)
+            {
+                var posy = parseInt(String(bird.style.top).replace('%', ''));
+                // 15%, 35% 
+                if (posy > 15 && posy < 30)
+                {
+                    bird.remove();
+                    p1.remove();
+                    p2.remove();
+                    document.querySelector('.game').remove();
+                    delete ran;
+                }
+            }
+            if (i > -20 && i < -10) {
+                var posy = parseInt(String(bird.style.top).replace('%', ''));
+                // 20%, 80% 
+                //alert(bird.style.top);
+                if (posy > 25 && posy < 30) {
+                    bird.remove();
+                    p1.remove();
+                    p2.remove();
+                    document.querySelector('.game').remove();
+                    delete ran;
+                }
+            }
+           i -= 1;
+           p1.style.left = i + '%';
+           p2.style.left = i + 40 + '%';
+            bird.style.top = jump + '%';
+            if (io == 2)
+            {
+            jump += 5;
+            bird.style.transform = 'rotate(-30deg)';
+            }
+            if (io == 0)
+            {
+                io = 2;
+            }
+            else{}
+            if (jump > 150){
+                bird.remove();
+                p1.remove();
+                p2.remove();
+                document.querySelector('.game').remove();
+                delete ran;
+            }
+            if (jump < -25) {
+                bird.remove();
+                 p1.remove();
+                p2.remove();
+                document.querySelector('.game').remove();
+                delete ran;
+            }
+            else{}
+           if (i == -46)
+           {
+               i = 90;
+               ran += 2;
+               rank.innerHTML = ran;
+           }
+           
+            }
+        function game_c()
+        {
+jump -= 10;
+            bird.style.transform = 'rotate(30deg)';
+         io = 0;   
+        }
+        var t = setInterval(game, speed);
+    </script>
+</body>
+</html>
